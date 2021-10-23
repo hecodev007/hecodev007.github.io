@@ -47,7 +47,12 @@ export default new Router({
       component: resolve => require(['../view/arrowheads/arrowheads'], resolve),
     
     },
+    {
+      path: '/farms',
+      name: 'farms',
+      component: resolve => require(['../view/farms/farms'], resolve),
     
+    }, 
 
   ]
 })

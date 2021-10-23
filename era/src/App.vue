@@ -119,26 +119,26 @@
           mode="horizontal"
           :default-openeds="defaultOpeneds"
           router
-        > -->
-         <el-menu
-            @select="handleSelect"
-            id="navid"
-            mode="horizontal"
-            :default-openeds="defaultOpeneds"
-            default-active="/home"
-            class="nav"
-          >
-           <el-menu-item
-              :key="key"
-              v-for="(item,key) in rightNavItems"
-              :index="item.activeIndex"
-            >{{item.name}}</el-menu-item>
+        >-->
+        <el-menu
+          @select="handleSelect"
+          id="navid"
+          mode="horizontal"
+          :default-openeds="defaultOpeneds"
+          default-active="/home"
+          class="nav"
+        >
+          <el-menu-item
+            :key="key"
+            v-for="(item,key) in rightNavItems"
+            :index="item.activeIndex"
+          >{{item.name}}</el-menu-item>
           <!-- <el-menu-item
             :key="key"
             v-for="(item,key) in rightNavItems"
             :index="item.index"
             :route="item.activeIndex"
-          >{{item.name}}</el-menu-item> -->
+          >{{item.name}}</el-menu-item>-->
         </el-menu>
       </div>
       <div class="itemList">
@@ -173,7 +173,7 @@ export default {
         { name: "NFT", activeIndex: "/blindbox", index: "2" },
         { name: "Market", activeIndex: "/market", index: "3" },
         { name: "Pledge Mining", activeIndex: "/arrowheads", index: "4" },
-        // { name: "TOKEN" },
+        { name: "FARMS", activeIndex: "/FARMS", index: "4" }
         // { name: "Contract" },
         // { name: "Backstage" }
       ],
@@ -338,11 +338,22 @@ export default {
   background: 0 !important;
 }
 .box .el-menu--horizontal > .el-menu-item.is-active {
-  border-bottom: 4px solid #70f4a5 !important;
+  border-bottom: 0 !important;
   font-size: 18px;
   color: #70f4a5 !important;
+  position: relative;
 }
-
+.box .el-menu--horizontal > .el-menu-item.is-active::after {
+  background: #70f4a5 !important;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 34px;
+  height: 4px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+}
 .el-menu-item:hover {
   background: 0 !important;
 }
