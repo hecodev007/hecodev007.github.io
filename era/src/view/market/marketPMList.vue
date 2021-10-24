@@ -179,8 +179,8 @@ export default {
     }
   }
   .list {
-    max-height: 700px;
-
+    max-height: 400px;
+height: 400px;
     .tbHeader {
       display: flex;
       justify-content: space-between;
@@ -343,6 +343,7 @@ export default {
   // }
   .list2 {
     max-height: 400px;
+    height: 400px;
     .tbHeader {
       display: flex;
       justify-content: space-between;
